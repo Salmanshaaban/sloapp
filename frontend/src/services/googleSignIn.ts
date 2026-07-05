@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiBase = 'https://salo-backend.onrender.com/api';
+const apiBase = '/api';
 
 export type GoogleSignInPayload = {
   email: string;
