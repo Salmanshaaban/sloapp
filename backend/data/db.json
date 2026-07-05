@@ -1,0 +1,387 @@
+{
+  "users": [
+    {
+      "id": "c67d8790-eca2-475e-a89e-219069b58789",
+      "name": "Demo User",
+      "email": "demo@salo.app",
+      "passwordHash": "$2a$10$FiGpa3okegwFvJooV5cPL.hVr0VI6fDASldUaqUhfkGDIkn5mkoQ.",
+      "balance": 19.5,
+      "points": 550,
+      "language": "en",
+      "themeMode": "dark",
+      "status": "active",
+      "deviceId": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Mobile Safari/537.36",
+      "fingerprint": "Linux armv81",
+      "provider": "email",
+      "referralCode": "562590bc",
+      "createdAt": "2026-06-30T20:35:59.502Z",
+      "lastLoginAt": "2026-06-30T23:46:16.186Z",
+      "settings": {
+        "notifications": true,
+        "darkMode": true
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "1c262125-5faa-48ab-9d27-10be6646a833",
+      "title": "Watch a short sponsor video",
+      "description": "View a quick promotional clip and earn instant rewards.",
+      "type": "ads",
+      "providerId": "02243f3b-17cc-4b19-9175-f690c2f0abeb",
+      "geo": [
+        "US",
+        "CA",
+        "GB"
+      ],
+      "reward": 0,
+      "points": 20,
+      "isActive": true,
+      "rules": "Watch the full video to earn points.",
+      "availabilityStatus": "approved",
+      "createdAt": "2026-06-30T20:35:59.408Z",
+      "updatedAt": "2026-06-30T20:35:59.408Z"
+    },
+    {
+      "id": "ff198a6a-ca81-4a4c-a957-0171e9728bc7",
+      "title": "Complete an easy survey",
+      "description": "Answer a few questions and earn rewards instantly.",
+      "type": "easy",
+      "providerId": "85f20f56-7f8e-4fa5-af80-765408654c06",
+      "geo": [
+        "US",
+        "CA",
+        "GB"
+      ],
+      "reward": 0,
+      "points": 40,
+      "isActive": true,
+      "rules": "Finish the survey to claim the reward.",
+      "availabilityStatus": "approved",
+      "createdAt": "2026-06-30T20:35:59.408Z",
+      "updatedAt": "2026-06-30T20:35:59.408Z"
+    },
+    {
+      "id": "73e48941-6b50-4425-8381-b68a4c3efc6f",
+      "title": "Install a sample app",
+      "description": "Install and open a sample app to receive earnings.",
+      "type": "medium",
+      "providerId": "02243f3b-17cc-4b19-9175-f690c2f0abeb",
+      "geo": [
+        "US",
+        "CA"
+      ],
+      "reward": 1.5,
+      "points": 80,
+      "isActive": true,
+      "rules": "Install the app and open it once.",
+      "availabilityStatus": "approved",
+      "createdAt": "2026-06-30T20:35:59.408Z",
+      "updatedAt": "2026-06-30T20:35:59.408Z"
+    },
+    {
+      "id": "7232fe62-6c50-4dc3-9289-ce2c51eb914d",
+      "title": "Complete a premium offer",
+      "description": "Complete a premium offer for a larger bonus.",
+      "type": "long",
+      "providerId": "85f20f56-7f8e-4fa5-af80-765408654c06",
+      "geo": [
+        "US",
+        "GB"
+      ],
+      "reward": 3,
+      "points": 150,
+      "isActive": true,
+      "rules": "Complete the offer and verify the submission.",
+      "availabilityStatus": "approved",
+      "createdAt": "2026-06-30T20:35:59.408Z",
+      "updatedAt": "2026-06-30T20:35:59.408Z"
+    }
+  ],
+  "task_categories": [
+    {
+      "id": "6a3f9086-2ba0-4ff9-bd09-24c143fcedd7",
+      "name": "ads",
+      "label": "Ads",
+      "description": "Paid ad views and sponsored placements.",
+      "active": true
+    },
+    {
+      "id": "40804e8a-ef6e-49f3-ace8-a07bbbba8698",
+      "name": "easy",
+      "label": "Easy Tasks",
+      "description": "Simple high-conversion tasks.",
+      "active": true
+    },
+    {
+      "id": "b3cf28b4-ee08-4002-8bdd-0ac199c0d670",
+      "name": "medium",
+      "label": "Medium Tasks",
+      "description": "Moderate effort with steady rewards.",
+      "active": true
+    },
+    {
+      "id": "471f72e4-c0ce-4ae7-8036-39863b679c28",
+      "name": "long",
+      "label": "Long Tasks",
+      "description": "Higher-value tasks for premium users.",
+      "active": true
+    }
+  ],
+  "task_providers": [
+    {
+      "id": "02243f3b-17cc-4b19-9175-f690c2f0abeb",
+      "name": "providerA",
+      "status": "approved",
+      "geoRestrictions": [
+        "US",
+        "CA"
+      ],
+      "trafficRules": "web",
+      "surveyRules": "no duplicates",
+      "incentivePolicy": "allowed",
+      "createdAt": "2026-06-30T19:00:26.995Z",
+      "updatedAt": "2026-06-30T19:00:26.995Z"
+    },
+    {
+      "id": "85f20f56-7f8e-4fa5-af80-765408654c06",
+      "name": "providerB",
+      "status": "approved",
+      "geoRestrictions": [
+        "US",
+        "GB"
+      ],
+      "trafficRules": "non-deceptive",
+      "surveyRules": "quality responses",
+      "incentivePolicy": "allowed",
+      "createdAt": "2026-06-30T19:00:26.995Z",
+      "updatedAt": "2026-06-30T19:00:26.995Z"
+    }
+  ],
+  "withdrawals": [],
+  "referrals": [],
+  "referral_levels": [
+    {
+      "id": "4a511025-c45d-4828-b19f-de2ad8be3bfe",
+      "level": 1,
+      "thresholdAmount": 5,
+      "rewardPoints": 100,
+      "description": "Reward for reaching referral level 1"
+    },
+    {
+      "id": "89035f1c-af05-4c54-a457-a823d82f8b12",
+      "level": 2,
+      "thresholdAmount": 10,
+      "rewardPoints": 100,
+      "description": "Reward for reaching referral level 2"
+    },
+    {
+      "id": "f90de358-097e-46f3-bde1-c018e88b6a66",
+      "level": 3,
+      "thresholdAmount": 15,
+      "rewardPoints": 100,
+      "description": "Reward for reaching referral level 3"
+    },
+    {
+      "id": "38f2264f-c194-46e8-ba3c-a83e23f10579",
+      "level": 4,
+      "thresholdAmount": 20,
+      "rewardPoints": 100,
+      "description": "Reward for reaching referral level 4"
+    },
+    {
+      "id": "58df12f1-74b4-469d-a98d-fd6424d8f80d",
+      "level": 5,
+      "thresholdAmount": 25,
+      "rewardPoints": 100,
+      "description": "Reward for reaching referral level 5"
+    },
+    {
+      "id": "8c922207-0720-4817-99b2-6a5e337fe822",
+      "level": 6,
+      "thresholdAmount": 30,
+      "rewardPoints": 100,
+      "description": "Reward for reaching referral level 6"
+    },
+    {
+      "id": "2106cf4b-02ec-4cd0-9d22-8a1ad714d58e",
+      "level": 7,
+      "thresholdAmount": 35,
+      "rewardPoints": 100,
+      "description": "Reward for reaching referral level 7"
+    },
+    {
+      "id": "8ac3e914-e197-48c2-85fc-30ffcce5b5fd",
+      "level": 8,
+      "thresholdAmount": 40,
+      "rewardPoints": 100,
+      "description": "Reward for reaching referral level 8"
+    },
+    {
+      "id": "d7a2b05e-425a-4503-ae2d-28bfbc2a4ebd",
+      "level": 9,
+      "thresholdAmount": 45,
+      "rewardPoints": 100,
+      "description": "Reward for reaching referral level 9"
+    },
+    {
+      "id": "af067c8f-7482-4742-a274-9ce1928003a2",
+      "level": 10,
+      "thresholdAmount": 50,
+      "rewardPoints": 100,
+      "description": "Reward for reaching referral level 10"
+    }
+  ],
+  "admin_users": [
+    {
+      "id": "81cf0d27-d589-44c1-8830-862c92fcdb6f",
+      "name": "Admin",
+      "email": "admin@salo.app",
+      "passwordHash": "$2a$10$O9hHAUXtlPyugoVeOA6qaOWsGN9YeFoFloQhn5KUr3LY6DrP82z3S",
+      "role": "superadmin",
+      "twoFactorEnabled": false,
+      "status": "active",
+      "createdAt": "2026-06-30T19:00:26.995Z",
+      "lastLoginAt": "2026-06-30T19:00:26.995Z"
+    },
+    {
+      "id": "16e0c906-fae0-42b8-8141-53d4e12c8c56",
+      "name": "Admin",
+      "email": "slman05088@gmail.com",
+      "passwordHash": "$2a$10$Or6zurljNKjRGc0Pi/EfXO/Jang5QXNh3pSPXU/jifIxJgZYJC8.C",
+      "role": "superadmin",
+      "twoFactorEnabled": false,
+      "status": "active",
+      "createdAt": "2026-07-01T16:49:50.197Z",
+      "lastLoginAt": "2026-07-01T16:49:50.197Z"
+    }
+  ],
+  "admin_actions": [],
+  "activity_logs": [
+    {
+      "id": "ee712ae5-bc8e-4324-8848-34afd37fed3f",
+      "userId": "c67d8790-eca2-475e-a89e-219069b58789",
+      "type": "login",
+      "details": {
+        "email": "demo@salo.app",
+        "suspicious": false,
+        "reason": "normal"
+      },
+      "deviceId": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+      "createdAt": "2026-06-30T20:42:05.342Z"
+    },
+    {
+      "id": "57b0f7b4-83ea-446c-8bbb-9877264f4a37",
+      "userId": "c67d8790-eca2-475e-a89e-219069b58789",
+      "type": "task_complete",
+      "details": {
+        "taskId": "1c262125-5faa-48ab-9d27-10be6646a833",
+        "reward": 0,
+        "points": 20
+      },
+      "createdAt": "2026-06-30T20:54:38.120Z"
+    },
+    {
+      "id": "c01cacf3-34c8-48be-99a6-c8cea3a8dad8",
+      "userId": "c67d8790-eca2-475e-a89e-219069b58789",
+      "type": "task_complete",
+      "details": {
+        "taskId": "1c262125-5faa-48ab-9d27-10be6646a833",
+        "reward": 0,
+        "points": 20
+      },
+      "createdAt": "2026-06-30T20:54:41.548Z"
+    },
+    {
+      "id": "5ee2a399-542d-40de-9ab9-31c26f3f317e",
+      "userId": "c67d8790-eca2-475e-a89e-219069b58789",
+      "type": "task_complete",
+      "details": {
+        "taskId": "ff198a6a-ca81-4a4c-a957-0171e9728bc7",
+        "reward": 0,
+        "points": 40
+      },
+      "createdAt": "2026-06-30T20:54:49.654Z"
+    },
+    {
+      "id": "03126779-7fcc-4bea-824d-0313201cbcaf",
+      "userId": "c67d8790-eca2-475e-a89e-219069b58789",
+      "type": "task_complete",
+      "details": {
+        "taskId": "7232fe62-6c50-4dc3-9289-ce2c51eb914d",
+        "reward": 3,
+        "points": 150
+      },
+      "createdAt": "2026-06-30T20:54:53.600Z"
+    },
+    {
+      "id": "3315ed3d-e79e-49c4-af92-4fdd05e0b5bd",
+      "userId": "c67d8790-eca2-475e-a89e-219069b58789",
+      "type": "login",
+      "details": {
+        "email": "demo@salo.app",
+        "suspicious": false,
+        "reason": "normal"
+      },
+      "deviceId": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Mobile Safari/537.36",
+      "createdAt": "2026-06-30T23:45:21.975Z"
+    },
+    {
+      "id": "79dbe32d-fca7-4e88-a6a6-6b51af7affdb",
+      "userId": "c67d8790-eca2-475e-a89e-219069b58789",
+      "type": "task_complete",
+      "details": {
+        "taskId": "1c262125-5faa-48ab-9d27-10be6646a833",
+        "reward": 0,
+        "points": 20
+      },
+      "createdAt": "2026-06-30T23:46:12.191Z"
+    },
+    {
+      "id": "e1e262c9-b640-487d-96b0-fa2f2c766d49",
+      "userId": "c67d8790-eca2-475e-a89e-219069b58789",
+      "type": "task_complete",
+      "details": {
+        "taskId": "ff198a6a-ca81-4a4c-a957-0171e9728bc7",
+        "reward": 0,
+        "points": 40
+      },
+      "createdAt": "2026-06-30T23:46:14.372Z"
+    },
+    {
+      "id": "e68117b0-1312-4414-9cb3-057ac7636586",
+      "userId": "c67d8790-eca2-475e-a89e-219069b58789",
+      "type": "task_complete",
+      "details": {
+        "taskId": "73e48941-6b50-4425-8381-b68a4c3efc6f",
+        "reward": 1.5,
+        "points": 80
+      },
+      "createdAt": "2026-06-30T23:46:16.190Z"
+    }
+  ],
+  "app_settings": [
+    {
+      "id": "d881aa1b-2eab-4c34-bf55-6c95ac7e3ed4",
+      "key": "brandName",
+      "value": "Salo",
+      "description": "App brand name.",
+      "updatedAt": "2026-06-30T19:00:26.995Z"
+    },
+    {
+      "id": "a7bd26ea-703e-4dfa-a66b-f5255c3fca3d",
+      "key": "theme",
+      "value": "black-gold",
+      "description": "Premium theme setting.",
+      "updatedAt": "2026-06-30T19:00:26.995Z"
+    },
+    {
+      "id": "2448b9ce-9dce-4f58-a30a-15f3aa6ee3f0",
+      "key": "minimumWithdrawal",
+      "value": 5,
+      "description": "Minimum withdrawal amount.",
+      "updatedAt": "2026-06-30T19:00:26.995Z"
+    }
+  ],
+  "notifications": []
+}

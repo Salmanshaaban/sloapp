@@ -1,0 +1,2 @@
+# ads.txt for salo-rewards.vercel.app
+google.com, pub-0000000000000000, DIRECT
