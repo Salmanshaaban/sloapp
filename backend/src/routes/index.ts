@@ -6,8 +6,11 @@ import referralRoutes from './referralRoutes.js';
 import adminRoutes from './adminRoutes.js';
 import settingsRoutes from './settingsRoutes.js';
 import offerwallRoutes from './offerwallRoutes.js';
+import adsRoutes from './adsRoutes.js';
+import adsStatusRoutes from './adsStatusRoutes.js';
 
 const router = express.Router();
+
 
 router.use('/auth', authRoutes);
 router.use('/tasks', taskRoutes);
@@ -16,5 +19,8 @@ router.use('/referrals', referralRoutes);
 router.use('/settings', settingsRoutes);
 router.use('/admin', adminRoutes);
 router.use('/offerwall', offerwallRoutes);
+router.use('/ads/status', adsStatusRoutes);
+router.use('/ads/reward', adsRoutes);
+
 
 export default router;
