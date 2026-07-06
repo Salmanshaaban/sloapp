@@ -1,8 +1,12 @@
-- [ ] تحديث backend: إضافة endpoints لإحصاء حد 20/يوم وصرف +2 Points بعد إعلان
-- [x] إضافة backend route: adsRoutes.ts
-- [x] إضافة backend route: adsStatusRoutes.ts
-- [x] تعديل backend route index.ts لتسجيل /api/ads/status و /api/ads/reward
-- [ ] تحديث frontend: صفحة TasksPage.tsx لربط زر Start بإعلان Adcash interstitial
-- [ ] تحديث frontend: تنفيذ واجهة زر Next + عداد 5 ثواني وحلقة 20 إعلان يومياً
-- [ ] اختبار محلي عبر build وتشغيل backend/frontend
+# TODO
+
+## React/Vite login API routing fix
+- [ ] update frontend/src/services/api.ts to use import.meta.env.VITE_API_URL as baseURL (no hardcoded '/api')
+- [ ] update frontend/src/services/googleSignIn.ts to use import.meta.env.VITE_API_URL and correct endpoint path
+- [ ] update frontend/vite.config.ts to remove/disable dev-only proxy impact for production (optional)
+- [ ] update vercel.json routing so /api is not proxied to Vercel backend (leave external Render)
+- [ ] ensure frontend/.env.example contains VITE_API_URL=https://sloapp.onrender.com
+- [ ] add console.log to confirm final URL used during login
+- [ ] run: npm run build (inside frontend/)
+- [ ] fix any build errors and ensure TS passes
 

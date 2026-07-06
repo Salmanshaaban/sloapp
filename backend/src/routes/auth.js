@@ -1,22 +1,19 @@
-import { Router, Request, Response } from 'express';
+import { Router } from 'express';
 import jwt from 'jsonwebtoken';
 
 const router = Router();
 
-// بيانات الأدمن الثابتة
 const ADMIN_EMAIL = 'slman05088@gmail.com';
 const ADMIN_PASSWORD = 'Admin@2026#Secure';
 const JWT_SECRET = 'SuperSecretJWTKey2026#Secure';
 
-// تسجيل الدخول
-router.post('/login', (req: Request, res: Response) => {
+router.post('/login', (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
     return res.status(400).json({ message: 'البريد الإلكتروني وكلمة المرور مطلوبة' });
   }
 
-  // التحقق من الأدمن
   if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
     const token = jwt.sign({ email, role: 'admin' }, JWT_SECRET, { expiresIn: '7d' });
     return res.json({
@@ -25,7 +22,6 @@ router.post('/login', (req: Request, res: Response) => {
     });
   }
 
-  // مستخدم عادي (تسجيل دخول تجريبي)
   const token = jwt.sign({ email, role: 'user' }, JWT_SECRET, { expiresIn: '7d' });
   return res.json({
     token,
@@ -33,23 +29,21 @@ router.post('/login', (req: Request, res: Response) => {
   });
 });
 
-// جلب بيانات المستخدم الحالي
-router.get('/me', (req: Request, res: Response) => {
+router.get('/me', (req, res) => {
   const token = req.headers.authorization?.split(' ')[1];
   if (!token) {
     return res.status(401).json({ message: 'غير مصرح' });
   }
 
   try {
-    const decoded = jwt.verify(token, JWT_SECRET) as any;
+    const decoded = jwt.verify(token, JWT_SECRET);
     return res.json({ user: decoded });
   } catch {
     return res.status(401).json({ message: 'توكن غير صالح' });
   }
 });
 
-// تسجيل الخروج
-router.post('/logout', (req: Request, res: Response) => {
+router.post('/logout', (req, res) => {
   res.json({ message: 'تم تسجيل الخروج بنجاح' });
 });
 
