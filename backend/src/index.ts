@@ -4,7 +4,6 @@ import { initDb } from './db.js';
 import routes from './routes/index.js';
 
 const app = express();
-const port = process.env.PORT || 5000;
 
 app.use(express.json({ limit: '10mb' }));
 app.use(cors({ origin: '*', credentials: true }));
@@ -13,18 +12,29 @@ app.use(cors({ origin: '*', credentials: true }));
 app.use('/api', routes);
 
 // Health check
-app.get('/api/health', (req, res) => {
+app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok', message: 'Server is running' });
 });
 
-// Initialize database then start
+// Initialize database
+let dbReady = false;
 initDb()
   .then(() => {
+    dbReady = true;
     console.log('Database initialized');
-    // Don't call app.listen for Vercel - export app instead
   })
   .catch((err) => {
     console.error('Failed to initialize database:', err);
   });
 
+// For Vercel serverless: ensure DB is ready before handling requests
+app.use((_req, res, next) => {
+  if (!dbReady) {
+    // Try to init again if first attempt failed
+    initDb().then(() => { dbReady = true; }).catch(() => {});
+  }
+  next();
+});
+
+// Export for Vercel serverless
 export default app;

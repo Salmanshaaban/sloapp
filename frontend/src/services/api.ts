@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL as string | undefined;
-if (!API_URL) throw new Error('Missing VITE_API_URL');
+const API_URL = (import.meta.env.VITE_API_URL as string) || '';
 
 // Note: backend routes are mounted under /api
+// On Vercel, API_URL can be empty (same-origin), and the backend handles /api routes
 const api = axios.create({
-  baseURL: `${API_URL}/api`,
+  baseURL: API_URL ? `${API_URL}/api` : '/api',
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
