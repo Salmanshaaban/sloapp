@@ -1,12 +1,19 @@
 # TODO
 
-## React/Vite login API routing fix
-- [ ] update frontend/src/services/api.ts to use import.meta.env.VITE_API_URL as baseURL (no hardcoded '/api')
-- [ ] update frontend/src/services/googleSignIn.ts to use import.meta.env.VITE_API_URL and correct endpoint path
-- [ ] update frontend/vite.config.ts to remove/disable dev-only proxy impact for production (optional)
-- [ ] update vercel.json routing so /api is not proxied to Vercel backend (leave external Render)
-- [ ] ensure frontend/.env.example contains VITE_API_URL=https://sloapp.onrender.com
-- [ ] add console.log to confirm final URL used during login
-- [ ] run: npm run build (inside frontend/)
-- [ ] fix any build errors and ensure TS passes
+## تم اكتشاف المشكلة
+- Vercel config يوجّه `/api/*` إلى `api/index.ts`.
+- لذلك تسجيل الدخول يتم عبر `api/index.ts` وليس عبر `backend/`.
+
+## الخطوات المطلوبة لإصلاح “تسجيل الدخول” على Vercel
+1. (اختياري) تأكيد الهدف:
+   - هل نريد Vercel يشغل `backend/src/index.ts`؟
+   - أم نريد تصحيح إعدادات `api/index.ts` فقط.
+2. تعديل `vercel.json` إذا اخترنا تشغيل `backend/` بدل `api/`.
+3. إن اخترنا `api/`:
+   - ضبط Vercel Environment Variables: `ADMIN_EMAIL` و `ADMIN_PASSWORD` و `JWT_SECRET`.
+   - أو إضافة مسار signup لتوليد admin/users داخل `api/index.ts`.
+4. إعادة بناء/إعادة رفع “نسخة جديدة” على Vercel.
+5. اختبار endpoints:
+   - `POST /api/auth/login`
+   - `GET /api/auth/profile` بعد تسجيل الدخول.
 

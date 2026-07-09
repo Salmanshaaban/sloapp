@@ -5,7 +5,8 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { user } = useAuth();
+  const { user, loading } = useAuth();
+  if (loading) return <div className="page page-center"><div className="card" style={{ padding: '32px', textAlign: 'center' }}>جاري التحميل...</div></div>;
   return user ? <>{children}</> : <Navigate to="/login" />;
 };
 

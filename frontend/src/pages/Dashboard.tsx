@@ -1,33 +1,50 @@
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard: React.FC = () => {
   const { user, logout, isAdmin } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
 
   return (
-    <div style={{ maxWidth: '800px', margin: '50px auto', padding: '20px' }}>
-      <h1>مرحباً، {user?.name || 'مستخدم'}</h1>
-      <p>البريد الإلكتروني: {user?.email}</p>
-      <p>الدور: {isAdmin ? 'مدير' : 'مستخدم'}</p>
-      
+    <div className="page">
+      <div className="top-bar">
+        <h1>لوحة التحكم</h1>
+        <div className="nav-links">
+          <a href="/dashboard">الرئيسية</a>
+        </div>
+      </div>
+
+      <div className="card section-card">
+        <h2>مرحباً، {user?.name || 'مستخدم'}</h2>
+        <div className="wallet-summary" style={{ marginTop: '16px' }}>
+          <div className="stat-card">
+            <span className="label">البريد الإلكتروني</span>
+            <strong>{user?.email}</strong>
+          </div>
+          <div className="stat-card">
+            <span className="label">الدور</span>
+            <strong>{isAdmin ? 'مدير' : 'مستخدم'}</strong>
+          </div>
+        </div>
+      </div>
+
       {isAdmin && (
-        <div style={{ marginTop: '20px', padding: '15px', border: '2px solid green', borderRadius: '8px' }}>
-          <h3>🔐 لوحة تحكم المدير</h3>
-          <p>هذه الصفحة خاصة بالمدير فقط.</p>
+        <div className="card section-card" style={{ borderColor: 'rgba(212, 175, 55, 0.4)' }}>
+          <h2>🔐 لوحة تحكم المدير</h2>
+          <p style={{ color: 'var(--text-muted)' }}>هذه الصفحة خاصة بالمدير فقط.</p>
         </div>
       )}
 
       <button
-        onClick={logout}
-        style={{
-          marginTop: '30px',
-          padding: '10px 20px',
-          backgroundColor: '#dc3545',
-          color: 'white',
-          border: 'none',
-          borderRadius: '4px',
-          cursor: 'pointer',
-        }}
+        onClick={handleLogout}
+        className="secondary-button"
+        style={{ marginTop: '20px' }}
       >
         تسجيل الخروج
       </button>

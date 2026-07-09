@@ -1,7 +1,8 @@
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 import api from '../services/api';
 
 interface User {
+  id?: string;
   email: string;
   role: 'admin' | 'user';
   name: string;
@@ -15,14 +16,31 @@ interface AuthContextType {
   isAdmin: boolean;
 }
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
+export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  // Load user from stored token on mount
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      setLoading(false);
+      return;
+    }
+    api.get('/auth/profile')
+      .then((res) => {
+        setUser(res.data.user);
+      })
+      .catch(() => {
+        localStorage.removeItem('token');
+        setUser(null);
+      })
+      .finally(() => setLoading(false));
+  }, []);
 
   const login = async (email: string, password: string) => {
-    setLoading(true);
     try {
       const response = await api.post('/auth/login', { email, password });
       const { token, user } = response.data;
@@ -31,8 +49,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     } catch (error) {
       console.error('Login failed:', error);
       throw error;
-    } finally {
-      setLoading(false);
     }
   };
 
