@@ -30,17 +30,15 @@ initDb()
 // For Vercel serverless: ensure DB is ready before handling requests
 app.use((_req, res, next) => {
   if (!dbReady) {
-    // Try to init again if first attempt failed
     initDb().then(() => { dbReady = true; }).catch(() => {});
   }
   next();
 });
 
-// إضافة كود الاستماع للمنفذ لضمان استمرار تشغيل السيرفر على Render بدون توقف
+// تشغيل السيرفر على منفذ ثابت لمنصة Render
 const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
   console.log(Server is running successfully on port ${PORT});
 });
 
-// Export for Vercel serverless
 export default app;
