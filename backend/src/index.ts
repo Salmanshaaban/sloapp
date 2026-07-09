@@ -36,5 +36,11 @@ app.use((_req, res, next) => {
   next();
 });
 
+// إضافة كود الاستماع للمنفذ لضمان استمرار تشغيل السيرفر على Render بدون توقف
+const PORT = process.env.PORT || 10000;
+app.listen(PORT, () => {
+  console.log(Server is running successfully on port ${PORT});
+});
+
 // Export for Vercel serverless
 export default app;
