@@ -13,6 +13,6 @@
     "types": ["node"],
     "resolveJsonModule": true,
     "verbatimModuleSyntax": true
-  },
+  },"verbatimModuleSyntax": false
   "include": ["src"]
 }
